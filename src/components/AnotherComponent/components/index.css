@@ -1,0 +1,65 @@
+.table-row {
+    transition: background 0.3s ease-in-out;
+}
+
+.table-row.profit {
+    background-color: rgba(76, 175, 80, 0.1); /* Светло-зеленый фон */
+}
+
+.table-row.loss {
+    background-color: rgba(244, 67, 54, 0.1); /* Светло-красный фон */
+}
+
+.remove-button {
+    background-color: #d32f2f;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.remove-button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+}
+
+.remove-button:active {
+    background-color: #9a0007;
+    transform: scale(0.95);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .table-row {
+       display: flex;
+        flex-direction: column;
+        width: 90%;
+        border-bottom: 2px solid #ddd;
+        padding: 10px 0;
+    }
+
+    .table-row td {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: 8px 16px;
+        position: relative;
+    }
+
+    .table-row td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    .remove-button {
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+    }
+}
